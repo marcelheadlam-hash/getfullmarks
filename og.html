@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>OG Image</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; background: #F6F4EE; font-family: Geist, system-ui, sans-serif; color: #0E0E0C; overflow: hidden; }
+  body { display: grid; place-items: center; min-height: 100vh; }
+  .og-scale {
+    width: 1200px; height: 630px;
+    transform-origin: center center;
+  }
+  .og {
+    width: 1200px; height: 630px;
+    padding: 64px 72px;
+    box-sizing: border-box;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative;
+    background:
+      linear-gradient(to right, rgba(14,14,12,0.06) 1px, transparent 1px) 0 0 / 48px 100%,
+      #F6F4EE;
+  }
+  .top { display: flex; align-items: center; gap: 14px; }
+  .mark {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: #0E0E0C;
+    display: grid; place-items: center;
+  }
+  .brand { font-size: 20px; font-weight: 500; letter-spacing: -0.01em; }
+  .eyebrow {
+    font-family: JetBrains Mono, monospace;
+    font-size: 14px; letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #C96044;
+    margin-top: 42px;
+  }
+  h1 {
+    font-family: Instrument Serif, serif;
+    font-weight: 400;
+    font-size: 92px;
+    line-height: 0.98;
+    letter-spacing: -0.015em;
+    margin: 16px 0 0;
+    max-width: 1060px;
+  }
+  h1 em { font-style: italic; color: #C96044; }
+  .bottom {
+    display: flex; justify-content: space-between; align-items: flex-end;
+  }
+  .sub {
+    font-family: Instrument Serif, serif;
+    font-size: 22px; font-style: italic;
+    color: #3A3A35;
+    max-width: 640px;
+    line-height: 1.35;
+  }
+  .meta {
+    font-family: JetBrains Mono, monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6B6B63;
+    text-align: right;
+    line-height: 1.7;
+  }
+  .rule {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px; background: #C96044;
+  }
+</style>
+</head>
+<body>
+<div class="og-scale">
+<div class="og">
+  <div class="rule"></div>
+  <div class="top">
+    <span class="mark"><svg width="22" height="22" viewBox="0 0 100 100"><path d="M 22 50 L 42 70 L 80 28" fill="none" stroke="#F6F4EE" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="brand">Get Full Marks</span>
+  </div>
+
+  <div>
+    <div class="eyebrow">Free PDF · Edexcel 1MA1</div>
+    <h1>The exact mistakes Edexcel <em>examiners</em> are watching for.</h1>
+  </div>
+
+  <div class="bottom">
+    <div class="sub">A free PDF of the specific slip-ups from GCSE Maths examiner reports — question, mistake, method, worked answer.</div>
+    <div class="meta">
+      fullmarks.ai<br/>
+      Higher · Foundation<br/>
+      April 2026
+    </div>
+  </div>
+</div>
+</div>
+<script>
+  function fit() {
+    const el = document.querySelector('.og-scale');
+    const sx = window.innerWidth / 1200;
+    const sy = window.innerHeight / 630;
+    const s = Math.min(sx, sy);
+    el.style.transform = `scale(${s})`;
+  }
+  fit();
+  window.addEventListener('resize', fit);
+</script>
+</body>
+</html>
